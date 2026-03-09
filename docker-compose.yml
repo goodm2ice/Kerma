@@ -1,0 +1,14 @@
+services:
+  kerma:
+    build: .
+    ports:
+      - 4444:80
+    environment:
+      KERMA_BOOTSTRAP_ADMIN_LOGIN: root
+      KERMA_BOOTSTRAP_ADMIN_PASSWORD: root
+      KERMA_SSO_ENABLED: true
+      KERMA_SSO_LABEL: GMAuth
+    volumes:
+      - ./test_data/config:/data/config
+      - ./test_data/sources:/data/sources
+      - ./test_data/editions:/data/editions
